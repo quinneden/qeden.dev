@@ -1,0 +1,5 @@
+.gemini/
+.hugo_build.lock
+.zed/
+public/
+resources/_gen/
