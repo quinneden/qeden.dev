@@ -1,8 +1,11 @@
 [[entries]]
-title = "experience"
+title = "projects"
 
-[[entries.entries]]
-title = "neuralink - software engineer intern, infrastructure"
+[entries.project_list]
+section = "projects"
+
+# [[entries.entries]]
+# title = "neuralink - software engineer intern, infrastructure"
 
 [[entries]]
 title = "all posts"

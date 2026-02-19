@@ -5,6 +5,9 @@ title = "qeden.dev"
 [module.hugoVersion]
 extended = true
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [markup.goldmark.parser.attribute]
 block = true
 title = true
@@ -14,13 +17,13 @@ anchorLineNos = false
 codeFences = true
 guessSyntax = false
 # hl_Lines = ""
-hl_inline = true
+hl_inline = false
 lineAnchors = ""
 lineNoStart = 1
 lineNos = false
 lineNumbersInTable = true
-noClasses = true
-style = "rrt"
+noClasses = false
+style = "github-dark"
 tabWidth = 4
 wrapperClass = "highlight"
 

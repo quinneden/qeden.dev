@@ -2,4 +2,5 @@
 title =  "quinn edenfield"
 draft = false
 +++
-infrastructure engineer, nix evangelist.
+infra engineer, nix evangelist.  
+<span style="color: red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^</span>

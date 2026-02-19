@@ -1,6 +1,6 @@
 {{ define "main" }} {{ $p := .Params }}
 <header>
-  <h1>{{ $p.Title }}</h1>
+  <h1>{{ $parts := split $p.title " " }}{{ index $parts 0 }} {{ index $parts 1 }}</h1>
   {{- if $.Site.Params.theme_config.show_description -}}
   <p>{{ $.Site.Params.description }}</p>
   {{- end -}}
