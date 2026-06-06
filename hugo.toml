@@ -1,0 +1,49 @@
+baseURL = "http://qeden.dev/"
+locale = "en-us"
+title = "qeden.dev"
+theme = "shibui"
+
+[markup]
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true  # Enable user to embed HTML snippets in Markdown content.
+
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNos = false
+noClasses = false
+tabWidth = 4
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 4
+ordered = true
+
+[params]
+comments = false
+showtoc = true
+showreadingtime = false
+showlastmod = false
+
+[params.author]
+name = "Quinn Edenfield"
+email = "quinn@qeden.dev"
+
+[menu]
+[[menu.main]]
+name = "projects"
+url = "/projects/"
+weight = 1
+
+[[menu.main]]
+name = "github"
+url = "https://github.com/quinneden"
+weight = 2
+
+[[menu.main]]
+name = "cv"
+url = "/cv/"
+weight = 3

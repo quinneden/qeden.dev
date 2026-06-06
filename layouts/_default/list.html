@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="time-list">
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

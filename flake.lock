@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1780365719,
+        "narHash": "sha256-QfWfccTN+70ZQ4m2qlU9PiKfz2Yppq94058iJyARNwc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ffa10e26ae11d676b2db836259889f1f571cb14f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "shibui": "shibui"
+      }
+    },
+    "shibui": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777710657,
+        "narHash": "sha256-dg6/pyZePnAtJiu/Cxn+N/piRYeP0Qynet0qlvqTmhA=",
+        "owner": "ntk148v",
+        "repo": "shibui",
+        "rev": "31cd8046a42444053bbf77a755f978e5106d03e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ntk148v",
+        "repo": "shibui",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

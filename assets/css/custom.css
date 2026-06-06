@@ -1,0 +1,574 @@
+/* ─── Auto light/dark theme ──────────────────────────────────────────────────
+ *
+ * The shibui theme defaults to light (--bg-l: 99%) in main.css.
+ * We override to dark only when the system/browser prefers it.
+ *
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-h: 0;
+    --bg-s: 0%;
+    --bg-l: 12%;
+  }
+}
+
+/* ─── Syntax highlighting (Chroma) ──────────────────────────────────────────
+ *
+ * noClasses = false in hugo.toml, so Hugo emits <span class="k"> etc.
+ * Light mode: algol_nu (high-contrast monochrome, weight/style-based).
+ * Dark mode:  nord (soft, colorful, designed for dark backgrounds).
+ *
+ * The pre/code block background comes from the theme's CSS variables, so we
+ * clear the hardcoded backgrounds Chroma would otherwise emit.
+ *
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+/* Strip Chroma backgrounds; let the theme's pre styling handle them */
+.bg,
+.chroma {
+  background-color: transparent;
+  -webkit-text-size-adjust: none;
+}
+
+/* ── Light mode: algol_nu ────────────────────────────────────────────────── */
+
+.chroma .lnlinks {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .hl {
+  background-color: #e5e5e5;
+}
+.chroma .lnt {
+  white-space: pre;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em;
+  color: #7f7f7f;
+}
+.chroma .ln {
+  white-space: pre;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em;
+  color: #7f7f7f;
+}
+.chroma .line {
+  display: flex;
+}
+
+/* Keywords – bold only, inherits theme text color */
+.chroma .k {
+  font-weight: bold;
+}
+.chroma .kc {
+  font-weight: bold;
+}
+.chroma .kd {
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .kn {
+  font-weight: bold;
+}
+.chroma .kp {
+  font-weight: bold;
+}
+.chroma .kr {
+  font-weight: bold;
+}
+.chroma .kt {
+  font-weight: bold;
+}
+
+/* Names – medium gray, bold italic */
+.chroma .nc {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .no {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .nn {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .nb {
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .bp {
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .nv {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .vc {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .vg {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .vi {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .vm {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .nf {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+.chroma .fm {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Literals – medium gray, italic */
+.chroma .s {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sa {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sb {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sc {
+  color: #666;
+  font-style: italic;
+}
+.chroma .dl {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sd {
+  color: #666;
+  font-style: italic;
+}
+.chroma .s2 {
+  color: #666;
+  font-style: italic;
+}
+.chroma .se {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sh {
+  color: #666;
+  font-style: italic;
+}
+.chroma .si {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sx {
+  color: #666;
+  font-style: italic;
+}
+.chroma .sr {
+  color: #666;
+  font-style: italic;
+}
+.chroma .s1 {
+  color: #666;
+  font-style: italic;
+}
+.chroma .ss {
+  color: #666;
+  font-style: italic;
+}
+
+/* Operators */
+.chroma .ow {
+  font-weight: bold;
+}
+
+/* Comments */
+.chroma .c {
+  color: #888;
+  font-style: italic;
+}
+.chroma .ch {
+  color: #888;
+  font-style: italic;
+}
+.chroma .cm {
+  color: #888;
+  font-style: italic;
+}
+.chroma .c1 {
+  color: #888;
+  font-style: italic;
+}
+.chroma .cs {
+  color: #888;
+  font-weight: bold;
+}
+.chroma .cp {
+  color: #888;
+  font-weight: bold;
+}
+.chroma .cpf {
+  color: #888;
+  font-weight: bold;
+}
+
+/* ── Dark mode: nord ─────────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  .chroma .hl {
+    background-color: #424853;
+  }
+  .chroma .lnt {
+    color: #6c6f74;
+  }
+  .chroma .ln {
+    color: #6c6f74;
+  }
+  .chroma .err {
+    color: #bf616a;
+  }
+
+  /* Keywords */
+  .chroma .k {
+    color: #81a1c1;
+    font-weight: bold;
+    font-style: normal;
+  }
+  .chroma .kc {
+    color: #81a1c1;
+    font-weight: bold;
+    font-style: normal;
+  }
+  .chroma .kd {
+    color: #81a1c1;
+    font-weight: bold;
+    font-style: normal;
+  }
+  .chroma .kn {
+    color: #81a1c1;
+    font-weight: bold;
+    font-style: normal;
+  }
+  .chroma .kp {
+    color: #81a1c1;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .kr {
+    color: #81a1c1;
+    font-weight: bold;
+    font-style: normal;
+  }
+  .chroma .kt {
+    color: #81a1c1;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Names */
+  .chroma .na {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nc {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .no {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nd {
+    color: #d08770;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .ni {
+    color: #d08770;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .ne {
+    color: #bf616a;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nl {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nn {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nx {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .py {
+    color: #8fbcbb;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nt {
+    color: #81a1c1;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nb {
+    color: #81a1c1;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .bp {
+    color: #81a1c1;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nf {
+    color: #88c0d0;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .fm {
+    color: #88c0d0;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .nv {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .vc {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .vg {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .vi {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .vm {
+    color: #d8dee9;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Literals */
+  .chroma .s {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sa {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sb {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sc {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .dl {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sd {
+    color: #616e87;
+    font-style: normal;
+  }
+  .chroma .s2 {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .se {
+    color: #ebcb8b;
+    font-style: normal;
+  }
+  .chroma .sh {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .si {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sx {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .sr {
+    color: #ebcb8b;
+    font-style: normal;
+  }
+  .chroma .s1 {
+    color: #a3be8c;
+    font-style: normal;
+  }
+  .chroma .ss {
+    color: #a3be8c;
+    font-style: normal;
+  }
+
+  /* Numbers */
+  .chroma .m {
+    color: #b48ead;
+  }
+  .chroma .mb {
+    color: #b48ead;
+  }
+  .chroma .mf {
+    color: #b48ead;
+  }
+  .chroma .mh {
+    color: #b48ead;
+  }
+  .chroma .mi {
+    color: #b48ead;
+  }
+  .chroma .il {
+    color: #b48ead;
+  }
+  .chroma .mo {
+    color: #b48ead;
+  }
+
+  /* Operators & punctuation */
+  .chroma .o {
+    color: #81a1c1;
+  }
+  .chroma .ow {
+    color: #81a1c1;
+    font-weight: bold;
+  }
+  .chroma .or {
+    color: #81a1c1;
+  }
+  .chroma .p {
+    color: #eceff4;
+  }
+
+  /* Comments */
+  .chroma .c {
+    color: #616e87;
+    font-style: normal;
+  }
+  .chroma .ch {
+    color: #616e87;
+    font-style: normal;
+  }
+  .chroma .cm {
+    color: #616e87;
+    font-style: normal;
+  }
+  .chroma .c1 {
+    color: #616e87;
+    font-style: normal;
+  }
+  .chroma .cs {
+    color: #616e87;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .cp {
+    color: #5e81ac;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .chroma .cpf {
+    color: #5e81ac;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Generic */
+  .chroma .gd {
+    color: #bf616a;
+  }
+  .chroma .ge {
+    font-style: italic;
+  }
+  .chroma .gr {
+    color: #bf616a;
+  }
+  .chroma .gh {
+    color: #88c0d0;
+    font-weight: bold;
+  }
+  .chroma .gi {
+    color: #a3be8c;
+  }
+  .chroma .go {
+    color: #d8dee9;
+  }
+  .chroma .gp {
+    color: #4c566a;
+    font-weight: bold;
+  }
+  .chroma .gs {
+    font-weight: bold;
+  }
+  .chroma .gu {
+    color: #88c0d0;
+    font-weight: bold;
+  }
+  .chroma .gt {
+    color: #bf616a;
+  }
+  .chroma .w {
+    color: #d8dee9;
+  }
+}
