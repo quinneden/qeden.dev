@@ -1,10 +1,3 @@
-/* ─── Auto light/dark theme ──────────────────────────────────────────────────
- *
- * The shibui theme defaults to light (--bg-l: 99%) in main.css.
- * We override to dark only when the system/browser prefers it.
- *
- * ─────────────────────────────────────────────────────────────────────────── */
-
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-h: 0;
@@ -13,18 +6,6 @@
   }
 }
 
-/* ─── Syntax highlighting (Chroma) ──────────────────────────────────────────
- *
- * noClasses = false in hugo.toml, so Hugo emits <span class="k"> etc.
- * Light mode: algol_nu (high-contrast monochrome, weight/style-based).
- * Dark mode:  nord (soft, colorful, designed for dark backgrounds).
- *
- * The pre/code block background comes from the theme's CSS variables, so we
- * clear the hardcoded backgrounds Chroma would otherwise emit.
- *
- * ─────────────────────────────────────────────────────────────────────────── */
-
-/* Strip Chroma backgrounds; let the theme's pre styling handle them */
 .bg,
 .chroma {
   background-color: transparent;
@@ -73,7 +54,6 @@
   display: flex;
 }
 
-/* Keywords – bold only, inherits theme text color */
 .chroma .k {
   font-weight: bold;
 }
@@ -97,7 +77,6 @@
   font-weight: bold;
 }
 
-/* Names – medium gray, bold italic */
 .chroma .nc {
   color: #666;
   font-weight: bold;
@@ -157,7 +136,6 @@
   font-style: italic;
 }
 
-/* Literals – medium gray, italic */
 .chroma .s {
   color: #666;
   font-style: italic;
@@ -215,12 +193,10 @@
   font-style: italic;
 }
 
-/* Operators */
 .chroma .ow {
   font-weight: bold;
 }
 
-/* Comments */
 .chroma .c {
   color: #888;
   font-style: italic;
@@ -266,7 +242,6 @@
     color: #bf616a;
   }
 
-  /* Keywords */
   .chroma .k {
     color: #81a1c1;
     font-weight: bold;
@@ -303,7 +278,6 @@
     font-style: normal;
   }
 
-  /* Names */
   .chroma .na {
     color: #8fbcbb;
     font-weight: normal;
@@ -405,7 +379,6 @@
     font-style: normal;
   }
 
-  /* Literals */
   .chroma .s {
     color: #a3be8c;
     font-style: normal;
@@ -463,7 +436,6 @@
     font-style: normal;
   }
 
-  /* Numbers */
   .chroma .m {
     color: #b48ead;
   }
@@ -486,7 +458,6 @@
     color: #b48ead;
   }
 
-  /* Operators & punctuation */
   .chroma .o {
     color: #81a1c1;
   }
@@ -501,7 +472,6 @@
     color: #eceff4;
   }
 
-  /* Comments */
   .chroma .c {
     color: #616e87;
     font-style: normal;
@@ -534,7 +504,6 @@
     font-style: normal;
   }
 
-  /* Generic */
   .chroma .gd {
     color: #bf616a;
   }
@@ -573,7 +542,6 @@
   }
 }
 
-/* Caret positioning fix */
 .caret-wrapper {
   position: relative;
   display: inline-block;
@@ -581,7 +549,7 @@
 
 .caret-symbol {
   position: absolute;
-  top: 1.1em;
+  top: 1.6em;
   left: 0;
   color: red;
   font-family: monospace;
