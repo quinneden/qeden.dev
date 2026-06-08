@@ -1,22 +1,18 @@
 name: build and deploy (with nix)
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
   id-token: write
+  pages: write
 
 concurrency:
-  group: pages
   cancel-in-progress: false
-
-defaults:
-  run:
-    shell: bash
+  group: pages
 
 jobs:
   build:
@@ -40,28 +36,12 @@ jobs:
         with:
           diagnostic-endpoint: ""
           use-flakehub: false
-      - name: Cache restore
-        id: cache-restore
-        uses: actions/cache/restore@v5
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys: hugo-
-      - name: Nix run build script
-        run: nix run
-        env:
-          HUGO_BASEURL: https://qeden.dev
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-      - name: Cache save
-        id: cache-save
-        uses: actions/cache/save@v5
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      - name: upload artifact
+      - name: Nix Build
+        run: nix build
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./result
 
   deploy:
     environment:

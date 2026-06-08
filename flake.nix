@@ -24,20 +24,18 @@
       eachSystem = f: lib.genAttrs systems (system: f (import nixpkgs { inherit system; }));
     in
     {
-      apps = eachSystem (pkgs: {
-        default = {
-          type = "app";
-          program = lib.getExe (
-            pkgs.writeShellApplication {
-              name = "hugo-build-qeden-dev";
-              runtimeInputs = [ pkgs.hugo ];
-              text = ''
-                ln -sfT ${shibui} themes/shibui
-                hugo build --gc --minify --noBuildLock
-                ls "$HUGO_CACHEDIR" || echo "NO CACHE DIR"
-              '';
-            }
-          );
+      packages = eachSystem (pkgs: {
+        default = pkgs.stdenv.mkDerivation {
+          name = "qeden-dev";
+          src = self;
+          nativeBuildInputs = [ pkgs.hugo ];
+          buildPhase = ''
+            ln -sfT ${shibui} themes/shibui
+            hugo build --gc --minify --noBuildLock
+          '';
+          installPhase = ''
+            cp -r public $out
+          '';
         };
       });
 
