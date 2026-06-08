@@ -572,3 +572,19 @@
     color: #d8dee9;
   }
 }
+
+/* Caret positioning fix */
+.caret-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.caret-symbol {
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  color: red;
+  font-family: monospace;
+  line-height: 1;
+  pointer-events: none;
+}
