@@ -6,7 +6,7 @@ showtitle: false
 
 ## Bio
 
-I am a software engineer with a strong background in functional programming, DevOps methodology, and infrastructure engineering. I am predominantly self taught and I have experience using Nix and Bazel together in monorepo environments, writing Python, Go, and Nix code in production environments, and have owned critical infrastructure components at a major biotech company. I also maintain numerous packages in the nixpkgs repository, and have authored a handful of open source projects.
+I am a software engineer with a strong background in functional programming, DevOps methodology, and infrastructure engineering. I am predominantly self taught and I have experience using Nix and Bazel together in monorepo environments, writing Python, Go, and Nix code in production, and have owned critical infrastructure components at a major biotech company. I also maintain a number of packages in the [nixpkgs repository](https://github.com/nixos/nixpkgs), and have authored a handful of [open source projects](https://github.com/quinneden).
 
 ## Experience
 
@@ -14,7 +14,7 @@ I am a software engineer with a strong background in functional programming, Dev
 - Aug 2025 – Jan 2026
 
 - Modernized developer infrastructure: migrated developer environments to Nix Flakes and flake-based dev-shells, replacing legacy workflows with strictly hermetic and reproducible environments.
-- Build system engineering: Orchestrated high-impact changes to monorepo build infrastructure, including major version upgrades to Bazel and pinned nixpkgs versions, resolving dependency conflicts across numerous distinct projects, and migrating to Bazel Modules (bzlmod).
+- Build system engineering: Orchestrated high-impact changes to monorepo build infrastructure, including major version upgrades to Bazel and pinned nixpkgs, resolving dependency conflicts across numerous distinct projects, and migrating to Bazel Modules (bzlmod).
 - Package management: Maintained internal Nix package sets, writing custom derivations for internal tools, refactoring existing derivations to support updated nixpkgs versions, and backporting patches to support specialized hardware and software requirements.
 
 ## Skills
